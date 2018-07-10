@@ -1,0 +1,289 @@
+/**************
+**Page Styles**
+**************/
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+}
+
+ul {
+  margin: 0px;
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+  overflow-x: hidden;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+/****************
+**Header Styles**
+****************/
+
+div.header {
+  position: fixed;
+  width: 100%;
+  padding: 12px 40px;
+  background-color: white;
+  border-bottom: 1px solid #dedede;
+  max-height: 60px;
+  overflow: hidden;
+  line-height: 2rem;
+  top: 0;
+}
+
+div.header li {
+  text-decoration: none;
+  list-style: none;
+  padding: 0 20px;
+}
+
+div.header li > a {
+  height: 100%;
+  display: block;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+.header button {
+  float: right;
+  display: inline;
+  margin: 0px;
+  color: #000;
+  padding: 10px 20px;
+}
+
+button {
+  padding: 20px 30px;
+  display: block;
+  margin: 30px auto 0px;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+button:focus {
+  outline: none;
+}
+
+.brand-name {
+  font-size: 2rem;
+}
+
+/*****************
+**Landing Styles**
+*****************/
+
+section.landing {
+  padding: 60px 100px 40px;
+  background-color: #de4130;
+  background-image: url('img/bg-pattern.png'), linear-gradient(to bottom right, #de4130, #7b4397);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #f2f2f2;
+}
+
+section.landing .text, section.landing .image {
+  align-self: center;
+}
+
+section.landing .text {
+  padding: 100px;
+  font-size: 3rem;
+  text-align: center;
+}
+
+section.landing .image {
+  width: 60%;
+}
+
+/******************
+**Download Styles**
+******************/
+
+section.download {
+  text-align: center;
+  padding: 130px 0 150px;
+  background-color: #fdcc52;
+}
+
+section.download h1, section.download p, .images {
+  width: 60%;
+  margin: 20px auto 0;
+
+}
+
+section.download .images {
+  display: flex;
+  flex-direction: column;
+}
+
+section.download .images img {
+  height: 60px;
+  margin-top: 15px;
+  width: auto;
+}
+
+/******************
+**Features Styles**
+******************/
+
+section.features {
+  text-align: center;
+  background: #000;
+  color: #fff;
+}
+
+section.features h1 {
+  text-transform: capitalize;
+  margin-top: 0;
+  padding-top: 50px;
+}
+
+section.features img {
+  height: 400px;
+  width: auto;
+}
+
+div.services {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 120px 0;
+}
+
+div.service-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  justify-content: center;
+}
+
+div.service {
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+div.service img {
+  height: 80px;
+}
+
+div.service h4, div.service p {
+  margin: 10px auto;
+}
+
+/****************
+**Social Styles**
+****************/
+
+section.social{
+  h1{
+    text-align:center;
+  }
+}
+
+$outer-transition-timing: 0.3s;
+$pintrest-outer-transition-timing: 0.5s;
+$inside-transition-timing: 0.15s;
+$fb-color: #3b5998;
+$gplus-color:#d34836;
+$pintrest-color: #bd081c;
+div.icons {
+  display: flex;
+  width:318px;
+  margin:0 auto;
+  .icon {
+    width: 33.33%;
+    .inside-logo {
+      stroke-width: 4px;
+      fill: #fff;
+      animation: none;
+    }
+    .outer-circle {
+      stroke-dasharray: 100;
+      fill: #fff;
+      stroke-width: 4px;
+      transition: transform $outer-transition-timing ease-out;
+      transform-origin: center;
+    }
+    .inner-circle {
+      transform-origin: center;
+      transition: transform $outer-transition-timing ease-out;
+    }
+    &:hover {
+      .pintrest{
+        .inside-logo{
+          animation: path-animation $pintrest-outer-transition-timing ease-out;
+          transition: fill $inside-transition-timing 0.4s ease-out;
+        }
+      }
+      .inside-logo {
+        animation: path-animation $outer-transition-timing ease-out;
+        transition: fill $inside-transition-timing $outer-transition-timing ease-out;
+      }
+      .inner-circle {
+        transform: rotate(90deg);
+      }
+      .outer-circle {
+        transform: rotate(-90deg);
+      }
+      .facebook{
+        .inside-logo, .inner-circle{
+          stroke: $fb-color;
+          fill: $fb-color;
+        }
+        .outer-circle{
+          stroke: $fb-color;
+        }
+      }
+      .gplus{
+        .inside-logo, .inner-circle{
+          stroke: $gplus-color;
+          fill: $gplus-color;
+        }
+
+        .outer-circle{
+          stroke: $gplus-color;
+        }
+      }
+      .pintrest{
+        .inside-logo, .inner-circle{
+          stroke: $pintrest-color;
+          fill: $pintrest-color;
+        }
+
+        .outer-circle{
+          stroke: $pintrest-color;
+        }
+      }
+    }
+  }
+
+  @keyframes path-animation {
+    0% {
+      stroke-dashoffset: 1000;
+    }
+    100% {
+      stroke-dashoffset: 0;
+
+    }
+  }
+}
+
+

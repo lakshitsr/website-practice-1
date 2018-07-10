@@ -1,0 +1,105 @@
+@media screen and (min-width: 992px) {
+
+    a:after {
+        content: '';
+        position: relative;
+        height: 2px;
+        width: 100%;
+        background-color: black;
+        top: -5px;
+        display: block;
+        left: 0;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.2s cubic-bezier(0.1, 0.2, 0.4, 1);
+    }
+
+    a:hover:after {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+
+    /****************
+    /*Header Styles**
+    ****************/
+    .header {
+        display: inline;
+        background-color: transparent;
+    }
+
+    .header ul {
+        display: inline;
+    }
+
+    .header li {
+        display: inline;
+        float: right;
+    }
+
+    .header button {
+        display: none;
+    }
+
+    /*****************
+    /*Landing Styles**
+    *****************/
+    section.landing {
+        flex-direction: row;
+    }
+
+    section.landing .text {
+        width: 40%;
+        padding: 10px;
+        text-align: left;
+    }
+
+    section.landing .image {
+        width: 40%;
+        margin-top: 20px;
+    }
+
+    /******************
+    /*Download Styles**
+    ******************/
+    section.download .images {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    section.download .images img:nth-child(1) {
+        margin-right: 10px;
+    }
+
+    /******************
+    **Features Styles**
+    ******************/
+
+    div.services{
+        flex-direction:row;
+        justify-content: center;
+    }
+    div.image-container{
+        width:40%;
+    }
+    div.service-container{
+        width:60%;
+    }
+
+}
+
+@media screen and (min-width: 360px) and (max-width: 992px) {
+
+    section.landing p.text {
+        width: 80%;
+        padding: 10px;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    section.landing .image {
+        width: 40%;
+        margin-top: 20px;
+    }
+
+}
